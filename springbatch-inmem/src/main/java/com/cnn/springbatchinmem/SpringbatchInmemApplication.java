@@ -18,11 +18,13 @@ public class SpringbatchInmemApplication implements ApplicationRunner {
     private Job job;
 
     public static void main(String[] args) {
+
         SpringApplication.run(SpringbatchInmemApplication.class, args);
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        // 执行任务
         this.jobLauncher.run(this.job, new JobParameters());
     }
 }
